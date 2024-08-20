@@ -2,6 +2,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Import the CORS middleware
+require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
