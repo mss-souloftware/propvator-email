@@ -7,7 +7,12 @@ const app = express();
 app.use(bodyParser.json());
 
 // Enable CORS for all routes
-app.use(cors());
+app.use(cors({
+    origin: 'https://propvator.com/', // Replace with your frontend domain
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+}));
+
 
 const transporter = nodemailer.createTransport({
     host: 'propvator.com',
