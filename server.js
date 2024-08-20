@@ -7,11 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Enable CORS for all routes
-app.use(cors({
-    origin: '*', // Replace with your frontend domain
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type'],
-}));
+app.use(cors());
 
 
 const transporter = nodemailer.createTransport({
