@@ -6,9 +6,10 @@ const cors = require('cors'); // Import the CORS middleware
 const app = express();
 app.use(bodyParser.json());
 
-// Enable CORS for all routes
+// Enable CORS for all origins
 app.use(cors());
 
+app.options('*', cors()); // Handle preflight requests
 
 const transporter = nodemailer.createTransport({
     host: 'propvator.com',
